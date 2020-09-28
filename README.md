@@ -5,7 +5,7 @@ Just a warning, this is very under-tested, so always keep a copy of the original
 
 ## Currently supports: 
 - Encoding modules
-	-So far only 1: an atomic module mainlyused to test the script
+	-So far only 1: an atomic module mainly used to test the script
 - Minifying/Shrinking bash code by reducing spaces and new lines.
   - NOTE: This minifier is by no means perfect and makes a few assumptions about how bash scripts are formatted, namely:
 	1. There will be no strangely crafted expressions, particularily involving strings/literals.
