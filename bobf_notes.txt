@@ -1,0 +1,19 @@
+Bash Obfuscation Notes:
+	- Syntax Types can me mixed and matched while ANSI-C quoting (ie. $'some_string'):
+		-> Hex (x74)
+		-> Octal (o)
+		-> Unicode Hex 4 (u0063a)
+		-> Unicdoe Hex 8 (?)
+	- Random chars can be double-quoted, single-quoted or \escaped:
+		-> cat /etc/pas'sword'
+	- Subshell: Any command in a $(some_cmd) and return it back to the surface
+		-> can be used in strange concats
+		-> causes increased runtime since bash will do execution setup and tear-down
+		-> Comments inside of subshells can be used to add strange/misleading code (ie. `# (\n) rm -rf /*` with return to make it sneakier)	
+	- Special variables $* and $@ contain the args; in and interactive shell, they are an empty string
+		-> So we can concat them inside of stuff
+	- with param expansion ( https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html ) we can do lots more!
+	- Gzip/Bzip2 Compression
+		-> Data is followed by a decompressor obfuscated by previous 3 steps.
+		-> OR data could be left to be manually unpacked.
+	- Random variable names (maybe gross unicode chars to fool basic editors?)

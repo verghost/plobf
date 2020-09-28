@@ -1,0 +1,12 @@
+TODO:
+	- Add more modules (proper eval string, random text enc, random quoting, gross unicode ($'\u0063'), etc...)
+	- Add option for string replacements and varname replacements
+		-> Option to encode string list (would be slower)
+	 	-> Uglier varname replacements (ie. unicode invisible to basic editors)
+	- Better progress status (current version is hacky)
+	- In pl1_shrink:
+		-> Make the preparation a LOT faster (pattern matching? also rethink using read)
+			-> shrink seems much slower on cygwin (might be read call)
+		-> Add checks for strings/literals
+		-> Use or remove the infnc flag
+		-> Collect function names for better command recog
