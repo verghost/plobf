@@ -1,5 +1,5 @@
 # plobf
-A bash payload shrinker/obfuscator written in bash!
+A bash shrinker/obfuscator written in bash!
 
 Just a warning, this is very under-tested, so always keep a copy of the original code!
 
